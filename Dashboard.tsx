@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from "react-native";
 const Dashboard: React.FC = () => {
     return <View style={styles.container}>
         <Text>You Made it!</Text>
-        <Text style={{
+        <Text testID="numberText" style={{
             fontSize: 22,
             paddingTop: 20
         }}>5901</Text>

@@ -5,7 +5,11 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.bitvavo.dasboardapp",
+      "buildNumber": "1.0.0"
+    }
   },
   "name": "dashboard-app"
 }

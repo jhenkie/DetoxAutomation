@@ -1,4 +1,4 @@
-import {Button, StyleSheet, Text, TextInput, View} from "react-native";
+import {Button, StyleSheet, Text, TextInput, View, Alert} from "react-native";
 import React from "react";
 import {NavigationStackProp} from 'react-navigation-stack';
 
@@ -13,30 +13,32 @@ const Login: React.FC<Props> = ({navigation}) => {
     const onLogin = () => {
         if (email === 'Tester@bitvavo.com' && password === 'BitcoinMiner1905') {
             navigation.navigate('Dashboard')
+        } else {
+            Alert.alert('Invalid email or password');
         }
     }
 
     return (
         <View style={styles.container}>
-            <Text>Welcome to your bitvavo assignment!</Text>
+            <Text testID="welcomeText">Welcome to your bitvavo assignment!</Text>
             <View>
                 <Text> Please test the login form below:</Text>
             </View>
             <View>
-                <TextInput
+                <TextInput testID="emailInput"
                     style={styles.input}
                     onChangeText={onEmailChange}
                     value={email}
                     placeholder={'Email Address'}
                 />
-                <TextInput
+                <TextInput testID="passwordInput"
                     style={styles.input}
                     onChangeText={onPasswordChange}
                     value={password}
                     secureTextEntry={true}
                     placeholder={'Password'}
                 />
-                <Button title={'Login'} onPress={onLogin}/>
+                <Button testID="loginButton" title={'Login'} onPress={onLogin}/>
             </View>
         </View>
     );
